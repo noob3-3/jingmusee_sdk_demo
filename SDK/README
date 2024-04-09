@@ -1,0 +1,13 @@
+备注
+1、把最大帧大小改成了2048*1024
+2、修改锁，解除可能导致的段错误
+
+3、增加了一个设置解码显示隐藏的函数 bHide=1 隐藏 =0 显示
+BOOL __stdcall I8_MP4Play_SetVideoHide(LONG nPort,int bHide);
+
+4、增加了一个抓图jpg到内存的函数
+//转换YUV数据成JPG地址
+BOOL __stdcall I8_MP4Play_ConvertToJpgEx(char * pBuf,long nSize,long nWidth,long nHeight,long nType,long nReserved1,long nReserved2,char *imgbuffer,unsigned int *InoutSize,int quality);
+
+增加获取相对时间戳的函数
+BOOL __stdcall I8_MP4Play_GetPlayedTimeStamp(LONG nPort,unsigned int *TimeStamp) ;
